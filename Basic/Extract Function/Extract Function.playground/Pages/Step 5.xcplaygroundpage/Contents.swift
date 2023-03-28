@@ -1,3 +1,7 @@
+//: [Previous](@previous)
+
+import Foundation
+
 struct Invoice {
     let name: String
 }
@@ -15,6 +19,4 @@ func printOwing(invoice: Invoice) {
     printDetails(invoice: invoice, outstanding: outstanding)
 }
 
-
-
-
+//: [Next](@next)
