@@ -2,6 +2,8 @@
 
 import Foundation
 
+// 5. Look for other code that’s the same or similar to the code just extracted, and consider using Replace Inline Code with Function Call to call the new function.
+
 struct Invoice {
     let name: String
 }

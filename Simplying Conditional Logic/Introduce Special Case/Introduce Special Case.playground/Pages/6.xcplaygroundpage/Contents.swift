@@ -1,6 +1,6 @@
 //: [Previous](@previous)
 
-// 2. Copy the extracted code from the source function into the new target function.
+// 6. Test.
 
 import Foundation
 
