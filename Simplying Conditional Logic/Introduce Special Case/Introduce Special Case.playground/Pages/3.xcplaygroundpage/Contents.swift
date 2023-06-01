@@ -1,29 +1,29 @@
 //: [Previous](@previous)
 
-// 3. Apply Extract Function to the special-case comparison code. Ensure that all clients use the new function instead of directly comparing it.
+// 3. In the new class create a special case init filling in the special properties.
 
 class Subject {
-    let customer: Customer? = Customer(name: "Francine")
-    var isSpecial = false
+    private let customer: Customer?
+
+    init(customer: Customer?) {
+        self.customer = customer
+    }
 
     func printName() {
-       print(getName())
-    }
-
-    private func getName() -> String {
         if let customer {
-            return customer.name
+            print(customer.name)
         }
-        return "occupant"
+        print("occupant")
     }
 }
 
-struct Customer {
+class Customer {
     let name: String
+    init(name: String) { self.name = name }
 }
 
-struct SpecialCase {
-    var isSpecial = true
+class UnknownCustomer: Customer {
+    init() {super.init(name: "occupant")}
 }
 
 //: [Next](@next)

@@ -1,7 +1,11 @@
 //: [Previous](@previous)
 
 class Subject {
-    let customer: Customer? = Customer(name: "Francine")
+    private let customer: Customer?
+
+    init(customer: Customer?) {
+        self.customer = customer
+    }
 
     func printName() {
         if let customer {
@@ -11,8 +15,9 @@ class Subject {
     }
 }
 
-struct Customer {
+class Customer {
     let name: String
+    init(name: String) { self.name = name }
 }
 
 //: [Next](@next)

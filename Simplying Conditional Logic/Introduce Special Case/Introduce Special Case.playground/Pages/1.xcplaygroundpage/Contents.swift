@@ -1,10 +1,13 @@
 //: [Previous](@previous)
 
-// 1. Add a special-case check property to the subject, returning false.
+// 1. Find all the special case propeties you need to handle.
 
 class Subject {
-    let customer: Customer? = Customer(name: "Francine")
-    var isSpecial = false
+    private let customer: Customer?
+
+    init(customer: Customer?) {
+        self.customer = customer
+    }
 
     func printName() {
         if let customer {
@@ -14,8 +17,9 @@ class Subject {
     }
 }
 
-struct Customer {
+class Customer {
     let name: String
+    init(name: String) { self.name = name }
 }
 
 //: [Next](@next)

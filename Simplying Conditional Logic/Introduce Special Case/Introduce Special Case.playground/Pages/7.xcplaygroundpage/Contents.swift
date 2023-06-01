@@ -1,9 +1,30 @@
 //: [Previous](@previous)
 
-// 7. Use Combine Functions into Class or Combine Functions into Transform to move all of the common special-case behaviour into the new element.
+// 7. Remove the optionality of customer class and update any references.
 
-import Foundation
+class Subject {
+    private let customer: Customer
 
-var greeting = "Hello, playground"
+    init(customer: Customer?) {
+        if let customer {
+            self.customer = customer
+        } else {
+            self.customer = UnknownCustomer()
+        }
+    }
+
+    func printName() {
+        print(customer.name)
+    }
+}
+
+class Customer {
+    let name: String
+    init(name: String) { self.name = name }
+}
+
+class UnknownCustomer: Customer {
+    init() {super.init(name: "occupant")}
+}
 
 //: [Next](@next)

@@ -1,29 +1,33 @@
 //: [Previous](@previous)
 
-// 4. Introduce the new special-case subject into the code, either by returning it from a function call or by applying a transform function.
+// 4. Change the init of the subject to create the special case class.
 
 class Subject {
-    let customer: Customer? = Customer(name: "Francine")
-    var isSpecial = false
+    private let customer: Customer?
+
+    init(customer: Customer?) {
+        if let customer {
+            self.customer = customer
+        } else {
+            self.customer = UnknownCustomer()
+        }
+    }
 
     func printName() {
-       print(getName())
-    }
-
-    private func getName() -> String {
         if let customer {
-            return customer.name
+            print(customer.name)
         }
-        return "occupant"
+        print("occupant")
     }
 }
 
-struct Customer {
+class Customer {
     let name: String
+    init(name: String) { self.name = name }
 }
 
-struct SpecialCase {
-    var isSpecial = true
+class UnknownCustomer: Customer {
+    init() {super.init(name: "occupant")}
 }
 
 //: [Next](@next)

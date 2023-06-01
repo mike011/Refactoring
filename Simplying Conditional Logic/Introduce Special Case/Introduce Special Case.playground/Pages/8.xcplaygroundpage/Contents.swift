@@ -1,9 +1,30 @@
 //: [Previous](@previous)
 
-// 8. Use Inline Function on the special-case comparison function for the places where it’s still needed.
+// 8. Test Again.
 
-import Foundation
+class Subject {
+    private let customer: Customer
 
-var greeting = "Hello, playground"
+    init(customer: Customer?) {
+        if let customer {
+            self.customer = customer
+        } else {
+            self.customer = UnknownCustomer()
+        }
+    }
+
+    func printName() {
+        print(customer.name)
+    }
+}
+
+class Customer {
+    let name: String
+    init(name: String) { self.name = name }
+}
+
+class UnknownCustomer: Customer {
+    init() {super.init(name: "occupant")}
+}
 
 //: [Next](@next)
