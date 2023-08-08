@@ -2,10 +2,7 @@
 
 import Foundation
 
-struct Invoice {
-    let name: String
-}
-
+struct Invoice { let name: String }
 func printBanner() {}
 func calculateOutstanding() -> Double {return 0.0}
 

@@ -4,6 +4,19 @@ import Foundation
 
 // 4. Replace the extracted code in the source function with a call to the target function.
 
-var greeting = "Hello, playground"
+struct Invoice { let name: String }
+func printBanner() {}
+func calculateOutstanding() -> Double {return 0.0}
+func printDetails(invoice: Invoice, outstanding: Double) {
+    print("name: \(invoice.name)")
+    print("amount: \(outstanding)")
+}
+
+func printOwing(invoice: Invoice) {
+    printBanner()
+    let outstanding = calculateOutstanding()
+
+    printDetails(invoice: invoice, outstanding: outstanding)
+}
 
 //: [Next](@next)
