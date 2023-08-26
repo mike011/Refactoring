@@ -1,6 +1,6 @@
 //: [Previous](@previous)
 
-// 5. Remove all special case code from the Subject.
+// 5. Remove all special case code from the Subject and test.
 
 class Subject {
     private let customer: Customer?

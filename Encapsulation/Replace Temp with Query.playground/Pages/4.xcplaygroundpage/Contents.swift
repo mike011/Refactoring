@@ -1,9 +1,7 @@
 //: [Previous](@previous)
 
-// 6. Test.
-
 import Foundation
 
-var greeting = "Hello, playground"
+// 4. Use Inline Variable to remove the temp.
 
 //: [Next](@next)

@@ -1,6 +1,6 @@
 //: [Previous](@previous)
 
-// 1. Find all the special case propeties you need to handle.
+// 1. Find all the special case properties you need to handle.
 
 class Subject {
     private let customer: Customer?

@@ -1,9 +1,9 @@
 //: [Previous](@previous)
 
-// 6. Test.
+// 6. Remove the optionality of customer class and update any references and test.
 
 class Subject {
-    private let customer: Customer?
+    private let customer: Customer
 
     init(customer: Customer?) {
         if let customer {
@@ -14,9 +14,7 @@ class Subject {
     }
 
     func printName() {
-        if let customer {
-            print(customer.name)
-        }
+        print(customer.name)
     }
 }
 
