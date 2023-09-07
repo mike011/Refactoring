@@ -4,8 +4,10 @@
 
 class Order {
     private var delegate: PriorityOrderDelegate?
-    init(delegate: PriorityOrderDelegate? = nil) {
-        self.delegate = delegate
+    init(priority: Bool = false) {
+        if priority {
+            self.delegate = PriorityOrderDelegate(order: self)
+        }
     }
     func getDaysToShip() -> Int {
         if let delegate {
@@ -14,15 +16,16 @@ class Order {
         return 3
     }
 }
-
 class PriorityOrder: Order {
-
 }
-
 class PriorityOrderDelegate {
-    func getDaysToShip() -> Int {
-        return 2
+    private weak var order: Order?
+    init(order: Order) {
+        self.order = order
     }
+    func getDaysToShip() -> Int { return 2 }
 }
+let order = Order()
+let priorityOrder = PriorityOrder()
 
 //: [Next](@next)
