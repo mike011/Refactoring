@@ -1,6 +1,6 @@
 //: [Previous](@previous)
 
-// 1. Extract the second phase code into its own function.
+// 1. Extract the second phase code into its own function and test.
 
 struct Product {
     let basePrice: Int

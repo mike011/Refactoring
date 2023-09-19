@@ -2,13 +2,16 @@
 
 import Foundation
 
-// 1. Identify all points of update for the variable. If necessary, use Split Variable to separate each point of update.
+// 4. Replace any reader of the variable with a call to the new function and test.
 
 class ProductionPlan {
     private var totalAdjustment = 0
     private var adjustments = [Int]()
     func getTotalAdjustment() -> Int {
-        return totalAdjustment
+        return getCalculatedAdjustment()
+    }
+    private func getCalculatedAdjustment() -> Int {
+        return adjustments.reduce(0) { $0 + $1 }
     }
     func applyAdjustment(adjustment: Int) {
         let adjustment2 = adjustment * 2
@@ -17,7 +20,8 @@ class ProductionPlan {
         totalAdjustment += adjustment3
     }
     func printer() {
-        print("Total adjustment is \(totalAdjustment)")
+        print("Total adjustment is \(getTotalAdjustment())")
     }
 }
+
 //: [Next](@next)

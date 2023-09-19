@@ -2,22 +2,23 @@
 
 import Foundation
 
-// 1. Identify all points of update for the variable. If necessary, use Split Variable to separate each point of update.
+// 5.  Apply Remove Dead Code to the declaration and updates to the variable.
 
 class ProductionPlan {
-    private var totalAdjustment = 0
     private var adjustments = [Int]()
     func getTotalAdjustment() -> Int {
-        return totalAdjustment
+        return getCalculatedAdjustment()
+    }
+    private func getCalculatedAdjustment() -> Int {
+        return adjustments.reduce(0) { $0 + $1 }
     }
     func applyAdjustment(adjustment: Int) {
         let adjustment2 = adjustment * 2
         adjustments.append(adjustment2)
-        let adjustment3 = adjustment * 2
-        totalAdjustment += adjustment3
     }
     func printer() {
-        print("Total adjustment is \(totalAdjustment)")
+        print("Total adjustment is \(getTotalAdjustment())")
     }
 }
+
 //: [Next](@next)

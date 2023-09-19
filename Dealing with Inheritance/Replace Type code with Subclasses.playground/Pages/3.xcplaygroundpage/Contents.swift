@@ -2,7 +2,7 @@
 
 import Foundation
 
-// 2. Pick one type code value. Create a subclass for that type code. Override the type code getter to return the literal type code value.
+// 3. Create selector logic to map from the type code parameter to the new subclass and test.
 
 enum Type {
     case enginner; case sales
@@ -18,7 +18,12 @@ class Engineer: Employee {
     override func getType() -> Type { return .enginner }
 }
 func createEmployee(name: String, type: Type) -> Employee {
-    return Employee(name: name, type: type)
+    switch type {
+    case .enginner:
+        return Engineer(name: name, type: type)
+    default:
+        return Employee(name: name, type: type)
+    }
 }
 
 //: [Next](@next)

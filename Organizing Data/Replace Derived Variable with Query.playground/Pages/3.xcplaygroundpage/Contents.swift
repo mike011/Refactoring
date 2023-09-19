@@ -2,13 +2,17 @@
 
 import Foundation
 
-// 1. Identify all points of update for the variable. If necessary, use Split Variable to separate each point of update.
+// 3. Use Introduce Assertion to assert that the variable and the calculation give the same result whenever the variable is used and test.
 
 class ProductionPlan {
     private var totalAdjustment = 0
     private var adjustments = [Int]()
     func getTotalAdjustment() -> Int {
+        assert(totalAdjustment == getCalculatedAdjustment())
         return totalAdjustment
+    }
+    func getCalculatedAdjustment() -> Int {
+        return adjustments.reduce(0) { $0 + $1 }
     }
     func applyAdjustment(adjustment: Int) {
         let adjustment2 = adjustment * 2
@@ -20,4 +24,5 @@ class ProductionPlan {
         print("Total adjustment is \(totalAdjustment)")
     }
 }
+
 //: [Next](@next)
