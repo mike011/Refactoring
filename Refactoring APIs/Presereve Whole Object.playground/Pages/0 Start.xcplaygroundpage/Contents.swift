@@ -2,5 +2,9 @@
 
 import Foundation
 
+class Day {
+    fu
+}
+
 //: [Next](@next)
 

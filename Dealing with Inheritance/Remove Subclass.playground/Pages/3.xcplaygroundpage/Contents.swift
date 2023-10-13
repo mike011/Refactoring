@@ -6,8 +6,8 @@ import Foundation
 
 class Person {
     private let name: String
-    private let gender: String
-    init(name: String, gender: String) { self.name = name; self.gender = gender }
+    private let gender = "X"
+    init(name: String) { self.name = name}
     func getName() -> String { return name }
     func getGender() -> String { return gender }
     func isMale() -> Bool { return self is Male }
@@ -15,9 +15,9 @@ class Person {
 class Male: Person { override func getGender() -> String { return "M" } }
 class Female: Person { override func getGender() -> String { return "F" } }
 
-func createPerson(withName name: String) -> Person { return Person(name: name, gender: "X") }
-func createMale(withName name: String) -> Person { return Male(name: name, gender: "M") }
-func createFemale(withName name: String) -> Person { return Female(name: name, gender: "F") }
+func createPerson(withName name: String) -> Person { return Person(name: name) }
+func createMale(withName name: String) -> Person { return Male(name: name) }
+func createFemale(withName name: String) -> Person { return Female(name: name) }
 
 print(createMale(withName: "Bob").getGender())
 print(createFemale(withName: "Mary").getGender())

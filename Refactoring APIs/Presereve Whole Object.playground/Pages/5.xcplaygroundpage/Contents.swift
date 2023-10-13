@@ -2,6 +2,6 @@
 
 import Foundation
 
-// 1. Create an empty function with the desired parameters.
+// 5. Change the name of the new function and all its callers.
 
 //: [Next](@next)
