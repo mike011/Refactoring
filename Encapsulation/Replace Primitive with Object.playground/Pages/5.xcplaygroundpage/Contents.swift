@@ -2,14 +2,14 @@
 
 import Foundation
 
-// 5. Test
+// 5. Consider using Rename Function on the original accessors to better reflect what they do.
 
 struct Processor {
     private var data: Priority
     init(data: [String: Int]) {
         self.data = Priority(data: data)
     }
-    func getData() -> Priority {
+    func getPriority() -> Priority {
         return data
     }
     mutating func set(data: [String: Int]) {

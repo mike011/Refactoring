@@ -2,7 +2,7 @@
 
 import Foundation
 
-// 6. Consider using Rename Function on the original accessors to better reflect what they do.
+// 6. Consider clarifying the role of the new object as a value or reference object by applying Change Reference to Value or Change Value to Reference.
 
 struct Processor {
     private var data: Priority
