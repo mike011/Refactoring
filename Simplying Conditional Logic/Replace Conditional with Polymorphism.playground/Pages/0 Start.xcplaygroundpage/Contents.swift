@@ -17,6 +17,5 @@ class BirdChecker {
     }
 }
 
-
 //: [Next](@next)
 

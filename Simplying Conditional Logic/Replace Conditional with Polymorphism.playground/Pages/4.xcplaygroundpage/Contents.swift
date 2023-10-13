@@ -14,9 +14,6 @@ class Bird {
     func plumage() -> String {
         return ""
     }
-    func airSpeedVelocity() -> Int {
-        return 0
-    }
 }
 class EuropeanSwallow: Bird {
     override func plumage() -> String { return "average" }
@@ -32,37 +29,17 @@ class NorwegianBlueParrot: Bird {
     override func plumage() -> String { return voltage > 100 ? "scorched" : "beautiful" }
 }
 class BirdChecker {
-    func plumages(infos: [BirdInfo]) -> [String] {
-        return infos.map { info in
-            return "\(info.name) \(plumage(info: info))"
-        }
-    }
-    func speeds(infos: [BirdInfo]) -> [String] {
-        return infos.map { info in
-            return "\(info.name) \(airSpeedVelocity(info: info))"
-        }
-    }
     func plumage(info: BirdInfo) -> String {
         switch info.type {
         case .europeanSwallow:
-            return "average"
+            return createBird(from: info).plumage()
         case .africanSwallow:
-            return info.coconuts > 2 ? "tired" : "average"
+            return createBird(from: info).plumage()
         case .norwegianBlueParrot:
-            return info.voltage > 100 ? "scorched" : "beautiful"
+            return createBird(from: info).plumage()
         }
     }
-    func airSpeedVelocity(info: BirdInfo) -> Int {
-        switch info.type {
-        case .europeanSwallow:
-            return 35
-        case .africanSwallow:
-            return 40
-        case .norwegianBlueParrot:
-            return 10
-        }
-    }
-    func get(info: BirdInfo) -> Bird {
+    func createBird(from info: BirdInfo) -> Bird {
         switch info.type {
         case .europeanSwallow:
             return EuropeanSwallow(name: info.name)
@@ -73,6 +50,5 @@ class BirdChecker {
         }
     }
 }
-
 
 //: [Next](@next)

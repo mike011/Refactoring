@@ -7,7 +7,7 @@ import Foundation
 enum BirdType { case europeanSwallow; case africanSwallow; case norwegianBlueParrot; }
 struct BirdInfo { let name: String; let type: BirdType; let coconuts: Int; let voltage: Int }
 class Bird {
-    let name: String
+let name: String
     init(name: String) {
         self.name = name
     }
@@ -22,12 +22,6 @@ class NorwegianBlueParrot: Bird {
     init(name: String, voltage: Int) { self.voltage = voltage; super.init(name: name) }
 }
 class BirdChecker {
-    func plumages(infos: [BirdInfo]) -> [String] {
-        return infos.map { info in return "\(info.name) \(plumage(info: info))" }
-    }
-    func speeds(infos: [BirdInfo]) -> [String] {
-        return infos.map { info in return "\(info.name) \(airSpeedVelocity(info: info))" }
-    }
     func plumage(info: BirdInfo) -> String {
         switch info.type {
         case .europeanSwallow:
@@ -38,17 +32,7 @@ class BirdChecker {
             return info.voltage > 100 ? "scorched" : "beautiful"
         }
     }
-    func airSpeedVelocity(info: BirdInfo) -> Int {
-        switch info.type {
-        case .europeanSwallow:
-            return 35
-        case .africanSwallow:
-            return 40
-        case .norwegianBlueParrot:
-            return 10
-        }
-    }
-    func get(info: BirdInfo) -> Bird {
+    func createBird(from info: BirdInfo) -> Bird {
         switch info.type {
         case .europeanSwallow:
             return EuropeanSwallow(name: info.name)
