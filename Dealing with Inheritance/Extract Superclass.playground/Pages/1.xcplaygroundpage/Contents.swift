@@ -6,7 +6,7 @@ import Foundation
 
 class Party {}
 
-class Employee {
+class Employee: Party {
     private let name: String; private let id: Int; private let monthlyCost: Double
     init(name: String, id: Int, monthlyCost: Double) {
         self.id = id
@@ -19,7 +19,7 @@ class Employee {
     func getAnnualCost() -> Double { return monthlyCost * 12 }
 }
 
-class Department {
+class Department: Party {
     private let name: String; private let staff: [Employee];
     init(name: String, staff: [Employee]) {
         self.name = name
