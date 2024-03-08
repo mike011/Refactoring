@@ -2,7 +2,7 @@
 
 import Foundation
 
-// 2. Replace the content of the variable with a simple class that wraps the record. Define an accessor inside this class that returns the raw record. Modify the functions that encapsulate the variable to use this accessor and test.
+// 2. Replace the contents of the variable with a simple class that wraps the record. Define an accessor inside this class that returns the raw record. Modify the functions that encapsulate the variable to use this accessor and test.
 
 class Organization {
     var data: [String: String]
