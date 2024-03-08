@@ -2,7 +2,7 @@
 
 import Foundation
 
-// 5. Change the name of the new function and all its callers.
+// 5. Change the name of the new function and all its callers to the original function name.
 
 struct TempRange { let low, high: Double }
 struct Room { let daysTempRange: TempRange }

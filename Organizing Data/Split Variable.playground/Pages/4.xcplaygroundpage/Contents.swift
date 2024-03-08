@@ -11,5 +11,4 @@ func printInfo(height: Int, width: Int) {
     let area = height * width
     print(area)
 }
-
 //: [Next](@next)
