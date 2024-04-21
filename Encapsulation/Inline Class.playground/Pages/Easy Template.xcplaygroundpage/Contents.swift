@@ -2,7 +2,7 @@
 
 import Foundation
 
-// Refactor the following by using: `Inline Class`
+// The `Telephone` class is no longer serving a useful purpose and can be removed. Use the `Inline Class` refactoring to remove it.
 
 // 1. In the target class, create functions for all the public functions of the source class. These functions should just delegate to the source class.
 // 2. Change all references to source class methods so they use the target class’s delegators instead. Test after each change.

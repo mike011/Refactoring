@@ -2,7 +2,7 @@
 
 import Foundation
 
-// Refactor the following by using: `Inline Class`
+// The `Telephone` class is no longer serving a useful purpose and can be removed. Use the `Inline Class` refactoring to remove it.
 
 class Person {
     var officeAreaCode: Int {
